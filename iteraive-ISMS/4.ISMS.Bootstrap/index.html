@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./src/assets/css/index.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- 导航条部分 -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="logo">
+            <img src="./src/assets/images/logo.png" alt="渡一教育" />
+            <span class="hb">后</span>
+            <span class="tl">台</span>
+            <span class="gr">管</span>
+            <span class="li">理</span>
+            <span class="xi">系</span>
+            <span class="ts">统</span>
+          </div>
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <!-- 下拉菜单 -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="s-list list-item student-list" data-id="student-list">
+                学生列表
+              </li>
+              <li class="s-add list-item student-add" data-id="student-add">
+                新增学生
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+      <!-- left-menu -->
+      <div class="left-menu">
+        <div class="list">
+          <h class="title disabled">学生管理</h>
+          <ul class="list-group" id="list-group">
+            <li class="s-list list-item student-list" data-id="student-list">
+              学生列表
+            </li>
+            <li class="s-add list-item student-add" data-id="student-add">
+              新增学生
+            </li>
+            <li class="s-add list-item student-echarts" data-id="student-echarts">
+              分布图表
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- right-content -->
+      <div class="right-content">
+        <div class="tab-content-item echarts show-list" id="student-echarts">
+          <div class="chart area"></div>
+          <div class="chart sex"></div>
+        </div>
+        <div class="tab-content-item" id="student-list">
+          <!-- 搜索 -->
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="search-inp">学号搜索：</label>
+              <input type="text" class="form-control" id="search-inp" placeholder="请输入学号" />
+            </div>
+            <button type="submit" class="btn btn-primary" id="search-btn">搜索</button>
+          </form>
+          <!-- 表格 -->
+          <table class="table table-bordered" id="students-table">
+            <thead>
+              <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>邮箱</th>
+                <th>年龄</th>
+                <th>手机号</th>
+                <th>住址</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+
+            <tbody id="table-body"></tbody>
+          </table>
+          <div id="page"></div>
+        </div>
+        <!-- 新增学生 -->
+        <div class="tab-content-item" id="student-add">
+          <div class="container">
+            <form id="add-student-form" class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-3 col-md-3 col-xs-3 control-label" for="sNo">学号：</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input id="sNo" name="sNo" type="text" class="text form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name" class="col-sm-3 col-md-3 col-xs-3 control-label">姓名:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="name" name="name" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sex" class="col-sm-3 col-md-3 col-xs-3 control-label">性别:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input name="sex" type="radio" value="0" checked />
+                  <label for="male" class="sex">男</label>
+                  <input name="sex" type="radio" value="1" />
+                  <label for="female" class="sex">女</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-3 col-md-3 col-xs-3 control-label">邮箱:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="email" name="email" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="birth" class="col-sm-3 col-md-3 col-xs-3 control-label">出生年:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="birth" name="birth" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="col-sm-3 col-md-3 col-xs-3 control-label">手机号:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="phone" name="phone" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="address" class="col-sm-3 col-md-3 col-xs-3 control-label">住址:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="address" name="address" />
+                </div>
+              </div>
+              <div class="form-group btnCon">
+                <input type="button" value="添加" id="add-student-btn" class="btn btn-primary" />
+                <input type="reset" value="重置" class="reset btn btn-danger" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- echarts -->
+        <div class="tab-content-item echarts" id="student-echarts">
+          <div class="chart area"></div>
+          <div class="chart sex"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 编辑弹框 -->
+    <div class="change-modal modal fade" id="modal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <di class="modal-body">
+            <form id="edit-form" class="form-horizontal">
+              <div class="form-group">
+                <label for="sNo" class="col-sm-3 col-sm-3 col-xs-3 control-label">学号:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="sNo" name="sNo" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name" class="col-sm-3 col-sm-3 col-xs-3 control-label">姓名:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="name" name="name" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sex" class="col-sm-3 col-sm-3 col-xs-3 control-label">性别:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <!-- <input type="text" class="form-control" id="sex"> -->
+                  <input name="sex" type="radio" value="0" checked />
+                  <label for="male" class="sex">男</label>
+                  <input name="sex" type="radio" value="1" />
+                  <label for="female" class="sex">女</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">邮箱:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="email" name="email" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="birth" class="col-sm-3 control-label">出生年:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="birth" name="birth" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="col-sm-3 control-label">手机号:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="phone" name="phone" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="address" class="col-sm-3 control-label">住址:</label>
+                <div class="col-sm-7 col-xs-7 col-md-7">
+                  <input type="text" class="form-control" id="address" name="address" />
+                </div>
+              </div>
+              <div class="form-group btnCon">
+                <input type="button" value="提交" id="edit-submit-btn" class="add btn btn-primary" />
+                <input type="reset" value="重置" class="reset btn btn-danger" />
+              </div>
+            </form>
+          </di>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary close-btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+    </div>
+
+    <script src="./src/js/jquery-3.4.1.min.js"></script>
+    <script src="./src/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="./src/js/pager.js"></script>
+    <script src="./src/js/echarts.js"></script>
+    <script src="./src/js/PieChart.js"></script>
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>

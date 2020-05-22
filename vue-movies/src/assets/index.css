@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+}
+button {
+  border-radius: 5px;
+  padding: 5px 10px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal .center {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+body div.app {
+  padding-top: 40px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body div.app nav {
+  background-color: lightcoral;
+  line-height: 40px;
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+body div.app nav .left {
+  justify-self: flex-start;
+  display: flex;
+}
+body div.app nav .left a {
+  padding: 0 10px;
+}
+body div.app nav .left a.router-link-exact-active {
+  background-color: red;
+}
+body div.app nav .right {
+  justify-self: flex-end;
+}
+body div.app nav .right button {
+  margin: 0 10px;
+}
+body div.app div.moviePage div.movieList {
+  background-color: lightblue;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body div.app div.moviePage div.movieList div.movie {
+  text-align: start;
+  width: 80%;
+  padding: 20px 40px;
+  background-color: lightseagreen;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid lightblue;
+}
+body div.app div.moviePage div.movieList div.movie img {
+  width: 200px;
+  margin-right: 20px;
+}
+body div.app div.moviePage div.movieList div.movie .words {
+  font-size: 15px;
+  font-weight: normal;
+}
+body div.app div.moviePage div.movieList div.movie .words .title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+body div.app div.moviePage div.movieList div.movie .words .desc {
+  margin-top: 5px;
+  font-size: 13px;
+}
+body div.app div.moviePage div.pager {
+  user-select: none;
+  width: 100%;
+  padding: 10px 0;
+  background-color: lightcoral;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+body div.app div.moviePage div.pager .pager-item {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 5px;
+  background-color: lightblue;
+  cursor: pointer;
+}
+body div.app div.moviePage div.pager .pager-num {
+  width: 25px;
+}
+body div.app div.moviePage div.pager .pager-text {
+  width: 50px;
+}
+body div.app div.moviePage div.pager .pager-text * {
+  font-style: italic;
+  margin-left: 5px;
+}
+body div.app div.moviePage div.pager .disabled {
+  color: gray;
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+body div.app div.moviePage div.pager .active {
+  color: lightcoral;
+  font-size: larger;
+}
+body div.app div.loginPage {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+body div.app div.loginPage * {
+  margin: 5px;
+}
+body div.app div.loginPage input {
+  border: 1px solid salmon;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  padding: 2px 7px;
+}
+body div.app div.loginPage button {
+  width: 100%;
+}

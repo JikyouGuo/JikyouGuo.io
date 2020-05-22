@@ -1,0 +1,38 @@
+[
+  {
+    "image": "../source/song_1.png",
+    "audio": "../source/song_1.mp3",
+    "song": "不再犹豫",
+    "album": "犹豫",
+    "singer": "beyond",
+    "duration": 251,
+    "isLike": false
+  },
+  {
+    "image": "../source/song_2.png",
+    "audio": "../source/song_2.mp3",
+    "song": "残酷な天使のテーゼ",
+    "album": "Neon Genesis Evangelion Soundtrack",
+    "singer": "高桥洋子",
+    "duration": 240,
+    "isLike": false
+  },
+  {
+    "image": "../source/song_3.png",
+    "audio": "../source/song_3.mp3",
+    "song": "The Elements",
+    "album": "The Elements",
+    "singer": "Tom Lehrer",
+    "duration": 86,
+    "isLike": false
+  },
+  {
+    "image": "../source/song_4.png",
+    "audio": "../source/song_4.mp3",
+    "song": " Chelsea Hotel No. 2",
+    "album": "\"cover\"",
+    "singer": "Lana Del Rey",
+    "duration": 219,
+    "isLike": false
+  }
+]

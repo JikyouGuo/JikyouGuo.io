@@ -1,0 +1,185 @@
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  font-size: 12px;
+}
+html body > .wrapper {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+html body > .wrapper > .song-img {
+  height: 90vw;
+  width: 90vw;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+}
+html body > .wrapper > .song-img .img-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body > .wrapper > .song-img .img-box img {
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+}
+html body > .wrapper > .song-info {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  bottom: 110px;
+}
+html body > .wrapper > .song-info .song-name {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 8px;
+}
+html body > .wrapper > .pro {
+  width: 100vw;
+  display: flex;
+  position: absolute;
+  bottom: 60px;
+}
+html body > .wrapper > .pro .cur-time,
+html body > .wrapper > .pro .all-time {
+  cursor: default;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 10px;
+}
+html body > .wrapper > .pro .pro-wrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  padding: 0 3px;
+}
+html body > .wrapper > .pro .pro-wrap .pro-bottom,
+html body > .wrapper > .pro .pro-wrap .pro-top {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 20px;
+}
+html body > .wrapper > .pro .pro-wrap .pro-bottom {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+html body > .wrapper > .pro .pro-wrap .pro-top {
+  background-color: #fff;
+  transform: translateX(-100%);
+}
+html body > .wrapper > .pro .pro-wrap .pro-top .spot {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: -12px;
+  top: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body > .wrapper > .pro .pro-wrap .pro-top .spot::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+html body > .wrapper > .control {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+html body > .wrapper > .control .btn {
+  cursor: pointer;
+  flex: 1;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+html body > .wrapper > .control .like {
+  background-image: url('../images/icon-like.png');
+}
+html body > .wrapper > .control .like.liking {
+  background-image: url('../images/icon-like-solid.png');
+}
+html body > .wrapper > .control .prev {
+  background-image: url('../images/icon-prev.png');
+}
+html body > .wrapper > .control .play {
+  background-image: url('../images/icon-play.png');
+}
+html body > .wrapper > .control .play.playing {
+  background-image: url('../images/icon-pause.png');
+}
+html body > .wrapper > .control .next {
+  background-image: url('../images/icon-next.png');
+}
+html body > .wrapper > .control .list {
+  background-image: url('../images/icon-list.png');
+}
+html body > .wrapper > .list {
+  display: none;
+  position: absolute;
+  bottom: 13vh;
+  right: 0;
+}
+html body > .wrapper > .list.show {
+  display: block;
+}
+html body > .wrapper > .list ul {
+  font-size: 1em;
+  color: #fff;
+  max-height: 60vh;
+  padding: 2vw 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+html body > .wrapper > .list ul li {
+  padding-left: 5vw;
+  width: 50vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  line-height: 5vh;
+  height: 5vh;
+}
+html body > .wrapper > .list ul li:hover {
+  background-color: #fff2;
+}
+@media (min-aspect-ratio: 1) {
+  html body > .wrapper > .song-img {
+    height: 90vh;
+    width: 90vh;
+    margin: 0 auto;
+  }
+}

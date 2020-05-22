@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+@headerHeight: 70px;
+@menuWidth: 200px;
+@fontSize: 14px;
+@fontColor: #b3bcc5;
+@dark: #354457;
+@light: #ddd;
+
+#add-student-form,
+#edit-student-form {
+  width: 230px;
+  margin: 30px auto; // 配合width水平居中
+  font-size: 16px;
+  div {
+    margin: 10px 0;
+    label {
+      span {
+        // 此处修改要对齐元素的width、display、text-align即可对齐
+        display: inline-block;
+        width: 50px;
+        text-align: right;
+        margin-right: 10px;
+      }
+    }
+    button {
+      width: 70px;
+      height: 30px;
+      line-height: 30px;
+      margin-left: 20px;
+    }
+    button:first-child {
+      margin-left: 65px;
+    }
+  }
+}
+
+.container {
+  height: 100%;
+  font-size: @fontSize;
+  color: @fontColor;
+  header {
+    height: @headerHeight;
+    width: 100%;
+    background-color: @dark;
+    .logo {
+      width: 200px;
+      padding-left: 20px;
+      height: @headerHeight;
+      line-height: @headerHeight;
+      img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+      }
+    }
+  }
+  > .content {
+    font-size: @fontSize;
+    height: calc(100% - @headerHeight);
+    min-width: 700px; // left-menu + right-content 配合right-content的min
+    .left-menu {
+      float: left;
+      width: @menuWidth;
+      height: 100%;
+      background-color: #4d5e70;
+      dl,
+      dt,
+      dd {
+        height: 40px;
+        line-height: 40px;
+      }
+      dt {
+        padding-left: 8px;
+        font-weight: bold;
+      }
+      dd {
+        padding-left: 30px;
+        cursor: pointer;
+      }
+      dd:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        color: @dark;
+      }
+      dd.active {
+        background-color: #ddd;
+        color: @dark;
+      }
+    }
+    .right-content {
+      // 1#. float: left;
+      // 2#. position: absolute;
+      // 3#. display:inline-block; vertical-align: top;
+      float: left;
+      min-width: 500px; // 配合content的min
+      width: calc(100% - @menuWidth);
+      height: 100%;
+      position: relative;
+      > div {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+
+      .student-list {
+        table {
+          color: @dark;
+          width: 100%;
+          text-align: center;
+          thead {
+            background-color: #e3e8ee;
+            color: #646987;
+          }
+          tr {
+            height: 30px;
+          }
+          tbody {
+            background-color: #fff;
+          }
+          button {
+            padding: 3px 10px;
+            color: #fff;
+            border: none;
+            outline: none;
+            margin-right: 5px;
+            cursor: pointer;
+          }
+          button.btn.edit {
+            background-color: #5cb85c;
+          }
+          button.btn.delete {
+            background-color: #d9534f;
+          }
+        }
+        .pager {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 140px;
+          button {
+            padding: 5px 10px;
+            cursor: pointer;
+          }
+          button.disabled {
+            color: dimgray;
+            background-color: lightgray;
+            cursor: not-allowed;
+          }
+        }
+        .modal {
+          display: none;
+          color: @dark;
+          position: fixed;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          h4 {
+            margin: 20px 0 80px 20px;
+          }
+          .content {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 10px;
+          }
+        }
+        .modal.active {
+          display: block;
+        }
+      }
+    }
+  }
+}

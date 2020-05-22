@@ -1,0 +1,1 @@
+!function(n){function i(n){this.index=0,this.len=n}i.prototype={getIndex:function(n){return"number"==typeof n?this.index=n:"+"===n?this.index=(this.index+1)%this.len:"-"===n&&(this.index=(this.index-1)%this.len),this.index}},n.controlIndex=i}((window.Zepto,window.player||(window.player={})));
