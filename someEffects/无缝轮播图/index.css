@@ -1,0 +1,104 @@
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.wrapper {
+  width: 640px;
+  height: 360px;
+  background: dimgray;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.wrapper .img {
+  width: 3200px;
+  position: absolute;
+  left: -640px;
+}
+
+.wrapper .img img {
+  float: left;
+}
+
+.wrapper:hover .arrow {
+  display: block;
+}
+
+.wrapper .arrow {
+  font-size: 32px;
+  display: none;
+}
+
+.wrapper .arrow span {
+  width: 40px;
+  height: 40px;
+  background: rgba(233, 233, 233, 0.5);
+  position: absolute;
+  top: 43%;
+  cursor: pointer;
+  z-index: 1;
+  text-align: center;
+  font-weight: 700;
+}
+
+.wrapper .arrow span.left {
+  left: 0;
+  border-radius: 0 25px 25px 0;
+}
+
+.wrapper .arrow span.right {
+  right: 0;
+  border-radius: 25px 0 0 25px;
+}
+
+.wrapper .nav {
+  width: 36px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 20px;
+  z-index: 1;
+  background: rgba(233, 233, 233, 0.2);
+  padding: 2px 4px;
+  border-radius: 15px;
+}
+
+.wrapper:hover .nav {
+  background: rgba(233, 233, 233, 0.4);
+}
+
+.wrapper:hover .nav .dot {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.wrapper:hover .nav .dot.active {
+  background: rgba(255, 68, 0, 0.9);
+}
+
+.wrapper .nav .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 2px;
+  float: left;
+  cursor: pointer;
+}
+
+.wrapper .nav .dot:hover {
+  background: rgba(255, 68, 0, 0.7);
+}
+
+.wrapper .nav .dot.active {
+  background: rgba(255, 68, 0, 0.5);
+}

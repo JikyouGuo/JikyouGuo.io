@@ -1,0 +1,82 @@
+span,
+h1 {
+  cursor: default;
+}
+p {
+  white-space: pre-wrap;
+  font-size: 16px;
+}
+textarea {
+  resize: none;
+}
+.robot.container {
+  font-size: 16px;
+  width: 50vw;
+  height: calc(100vh - 1vh * 2);
+  margin: 1vh auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.robot.container .robot.header {
+  border-bottom: 1px solid gray;
+  padding: 5px 10px;
+}
+.robot.container .robot.header > * {
+  text-align: center;
+  font-weight: 700;
+}
+.robot.container .robot.main {
+  padding: 10px;
+  flex-grow: 1;
+  overflow: auto;
+}
+.robot.container .robot.main p {
+  width: 100%;
+  height: auto;
+}
+.robot.container .robot.main .chat {
+  margin: 5px 0;
+}
+.robot.container .robot.main .user {
+  padding-left: 30%;
+  color: gray;
+  text-align: end;
+}
+.robot.container .robot.main .user span {
+  width: 100%;
+}
+.robot.container .robot.main .user p {
+  text-align: right;
+  padding-right: 10px;
+}
+.robot.container .robot.main .robot {
+  padding-right: 30%;
+}
+.robot.container .robot.main .robot p {
+  text-align: left;
+  padding-left: 10px;
+}
+.robot.container .robot.footer {
+  min-height: 100px;
+  border-top: 1px solid gray;
+  display: flex;
+}
+.robot.container .robot.footer textarea {
+  flex-grow: 1;
+  padding: 5px;
+}
+.robot.container .robot.footer .send button {
+  width: 50px;
+  height: 100%;
+  border-left: 1px solid gray;
+}
+.robot.container .robot.footer .send button:hover {
+  background-color: lightgray;
+}
+.robot.container .robot.footer .send button:active {
+  background-color: gray;
+}

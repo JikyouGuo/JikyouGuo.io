@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>test</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas></canvas>
+
+    <script>
+      const canvas = document.querySelector('canvas');
+      const ctx = canvas.getContext('2d');
+      const cw = window.innerWidth;
+      const ch = window.innerHeight;
+      canvas.width = cw;
+      canvas.height = ch;
+
+      class Snow {
+        constructor(config) {
+          Object.keys(config).forEach(key => {
+            this[key] = config[key];
+            this.realSize = this.scale * this.size;
+          });
+        }
+        render() {
+          const dX = this.size * Math.cos(Math.PI / 3);
+          const dY = this.size * Math.sin(Math.PI / 3);
+          ctx.save();
+          ctx.beginPath();
+          ctx.strokeStyle = '#fff';
+          ctx.lineWidth = 10;
+          ctx.lineCap = 'round';
+          ctx.translate(this.x, this.y); // 坐标系
+          ctx.scale(this.scale, this.scale); // 缩放
+          ctx.rotate((this.rotate * Math.PI) / 180); // 旋转
+          ctx.moveTo(-this.size, 0);
+          ctx.lineTo(this.size, 0);
+          ctx.moveTo(dX, dY);
+          ctx.lineTo(-dX, -dY);
+          ctx.moveTo(dX, -dY);
+          ctx.lineTo(-dX, dY);
+          ctx.stroke();
+          ctx.restore();
+          this.x = (this.x + this.speedX) % (cw + this.realSize);
+          this.y = (this.y + this.speedY) % ch; // [-scale*size, ch+scale*size)
+          this.rotate = (this.rotate + this.speedR) % 60;
+        }
+        static snowArray = [];
+        static init(counts, time) {
+          for (let i = 0; i < counts; i++) {
+            const r = Math.random();
+            const size = 20;
+            const scale = r * 1.2 + 0.3; // [0.3, 1.5)
+            const x =
+              Math.random() * (cw + scale * size) * 2 - (cw + scale * size); // [-(width+scale*size), width+scale*size)
+            const rotate = (1 - r) * 60; // -> 1/scale, [0,60)
+            const speedX = (1 - r) * 0.2 + 0.3; // -> 1/scale, [.3, .5)
+            const speedY = (r * 0.2 + 0.3) * 2; // -> scale, [.3, .5)
+            const speedR = (1 - r) * 0.3 + 0.2; // -> 1/scale, [.2, .5)
+            setTimeout(() => {
+              const snow = new Snow({
+                size,
+                scale,
+                x,
+                y: -scale * size,
+                rotate,
+                speedX,
+                speedY,
+                speedR
+              });
+              snow.render();
+              Snow.snowArray.push(snow);
+            }, Math.random() * time);
+          }
+        }
+        static snows() {
+          setInterval(() => {
+            ctx.clearRect(0, 0, cw, ch);
+            Snow.snowArray.forEach(snow => {
+              snow.render();
+            });
+          }, 1000 / 60);
+        }
+      }
+
+      Snow.init(40, 10000);
+      Snow.snows();
+    </script>
+  </body>
+</html>

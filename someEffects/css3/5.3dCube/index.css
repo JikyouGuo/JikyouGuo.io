@@ -1,0 +1,67 @@
+:root,
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    perspective: 1920px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotatey(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotatey(360deg);
+    }
+}
+
+.wrapper {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: calc(50%);
+    top: calc(50%);
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    animation: rotate 17s linear infinite;
+}
+
+.surface {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+.surface:nth-of-type(1) {
+    background-color: rgba(72, 209, 204, .5);
+    transform: translateZ(150px);
+}
+
+.surface:nth-of-type(2) {
+    background-color: rgba(102, 205, 170, .5);
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.surface:nth-of-type(3) {
+    background-color: rgba(255, 215, 0, .5);
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.surface:nth-of-type(4) {
+    background-color: rgba(255, 127, 80, .5);
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+.surface:nth-of-type(5) {
+    background-color: rgba(255, 105, 180, .5);
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.surface:nth-of-type(6) {
+    background-color: rgba(128, 128, 128, .5);
+    transform: rotateX(180deg) translateZ(150px);
+}

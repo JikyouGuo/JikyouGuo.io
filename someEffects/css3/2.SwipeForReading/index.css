@@ -1,0 +1,28 @@
+:root,
+html,
+body {
+  margin: 0;
+  color: dimgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.bookPage {
+  margin: 30px 200px;
+  padding: 20px 50px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 9px -5px gray;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}
+
+.article {
+  line-height: 28px;
+  transition: translateX, 0.5s;
+}
+.comment {
+  text-align: center;
+}

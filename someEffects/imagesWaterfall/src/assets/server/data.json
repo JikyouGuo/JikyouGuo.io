@@ -1,0 +1,62 @@
+[
+  {
+    "img": "./src/assets/imgs/0.png",
+    "desc": "owl.0",
+    "width": 640,
+    "height": 360
+  },
+  {
+    "img": "./src/assets/imgs/-1.png",
+    "desc": "owl.1",
+    "width": 360,
+    "height": 640
+  },
+  {
+    "img": "./src/assets/imgs/2.png",
+    "desc": "owl.2",
+    "width": 640,
+    "height": 360
+  },
+  {
+    "img": "./src/assets/imgs/-3.png",
+    "desc": "owl.3",
+    "width": 360,
+    "height": 640
+  },
+  {
+    "img": "./src/assets/imgs/4.png",
+    "desc": "owl.4",
+    "width": 640,
+    "height": 360
+  },
+  {
+    "img": "./src/assets/imgs/-5.png",
+    "desc": "owl.5",
+    "width": 360,
+    "height": 640
+  },
+  {
+    "img": "./src/assets/imgs/6.png",
+    "desc": "owl.6",
+    "width": 640,
+    "height": 360
+  },
+  {
+    "img": "./src/assets/imgs/-7.png",
+    "desc": "owl.7",
+    "width": 360,
+    "height": 640
+  },
+  {
+    "img": "./src/assets/imgs/8.png",
+    "desc": "owl.8",
+    "width": 640,
+    "height": 360
+  },
+  {
+    "img": "./src/assets/imgs/-9.png",
+    "desc": "owl.9",
+    "width": 360,
+    "height": 640
+  }
+]

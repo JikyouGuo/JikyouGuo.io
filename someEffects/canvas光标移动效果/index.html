@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      canvas {
+        background-color: #000;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas></canvas>
+
+    <script>
+      const canvas = document.querySelector('canvas');
+      const ctx = canvas.getContext('2d');
+      function init() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      init();
+      window.onresize = init;
+
+      function throttle(callback, time, isImmediately = true) {
+        if (isImmediately) {
+          let t;
+          return (...args) => {
+            if (!t || Date.now() - t > time) {
+              callback(...args);
+              t = Date.now();
+            }
+          };
+        } else {
+          let timer;
+          return (...args) => {
+            if (timer) return;
+            else
+              timer = setTimeout(() => {
+                callback(...args);
+                clearTimeout(timer);
+                timer = null;
+              }, time);
+          };
+        }
+      }
+      function handle(e) {
+        Cursor.list.push(new Cursor(e.offsetX, e.offsetY, radius));
+      }
+      handle = throttle(handle, 1000 / 20, true);
+
+      class Cursor {
+        constructor(x, y, r) {
+          this.x = x;
+          this.y = y;
+          this.r = r;
+          this.vx = (Math.random() - 0.5) * 3;
+          this.vy = (Math.random() - 0.5) * 3;
+          this.color =
+            'rgb(' +
+            this._random(0, 256) +
+            ',' +
+            this._random(0, 256) +
+            ',' +
+            this._random(0, 256) +
+            ')';
+          this.a = 1; // alpha: 透明度
+          this.draw(); // 每当新建对象时，执行draw
+        }
+        _random(min, max) {
+          return Math.floor((max - min) * Math.random() + min);
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.fillStyle = this.color;
+          ctx.globalCompositeOperation = 'lighter'; // 合成模式<https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Compositing>
+          ctx.globalAlpha = this.a;
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+          ctx.fill();
+          this.updata();
+        }
+        updata() {
+          this.x += this.vx;
+          this.y += this.vy;
+          this.a *= 0.98;
+        }
+        static list = [];
+        static init(radius) {
+          canvas.onmousemove = e => {
+            handle(e);
+          };
+        }
+        static render() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          Cursor.list.forEach((ele, i) => {
+            ele.draw();
+            if (ele.a < 0.05) Cursor.list.splice(i, 1);
+          });
+          requestAnimationFrame(Cursor.render);
+        }
+      }
+
+      const radius = 30;
+      Cursor.init(radius);
+      Cursor.render();
+    </script>
+  </body>
+</html>

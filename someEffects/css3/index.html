@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        text-shadow: 1px 1px 5px whitesmoke;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h3 {
+        font-weight: bold;
+        align-self: flex-start;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: gray;
+        margin: 10px 0 10px 2em;
+        padding: 10px 40px;
+        border-radius: 25px;
+        box-shadow: 1px 1px 9px -3px gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h3>Chapter2-2 selector:</h3>
+      <a href="./1.AccordionList&Tabs/index.html">1. AccordionList&Tabs</a>
+      <h3>Chapter4-2 text:</h3>
+      <a href="./2.SwipeForReading/index.html">2. SwipeForReading</a>
+      <h3>Chapter5-4 box:</h3>
+      <a href="./3.FlexTwoColumnsLayout/index.html">3. FlexTwoColumnsLayout</a>
+      <h3>Chapter6-10 optimization:</h3>
+      <a href="./4.3dGallery/index.html">4. 3dGallery</a>
+      <h3>Chapter6-10 optimization:</h3>
+      <a href="./5.3dCube/index.html">5. 3dCube</a>
+      <h3>Chapter7 optimization:</h3>
+      <a href="./6.ResponsiveBootstrap'sHomepage/index.html"
+        >6. ResponsiveBootstrap'sHomepage</a
+      >
+    </div>
+    <script>
+      (function() {
+        var colorArr = [
+          'mediumturquoise',
+          'mediumaquamarine',
+          'gold',
+          'coral',
+          'hotpink'
+        ];
+        Array.from(document.getElementsByTagName('a')).forEach(function(
+          ele,
+          i
+        ) {
+          ele.style.backgroundColor = colorArr[i % colorArr.length];
+        });
+      })();
+    </script>
+  </body>
+</html>

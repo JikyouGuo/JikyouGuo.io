@@ -1,0 +1,123 @@
+/* common */
+:root,
+html,
+body {
+    background-color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h1,
+h3 {
+    font-weight: normal;
+    text-shadow: 1px 1px 2px gray;
+}
+
+ul {
+    list-style: none;
+    position: relative;
+    transition: height, .5s;
+}
+
+li {
+    box-sizing: border-box;
+    box-shadow: 1px 1px 4px lightgray;
+    cursor: pointer;
+    transition: opacity, .5s;
+}
+
+li:hover {
+    background-color: rgba(240, 128, 128, .3);
+}
+
+.wrapper {
+    margin: 20px 100px 50px;
+}
+
+.wrapper input {
+    display: none;
+}
+
+* {
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Accordion List */
+.menu li {
+    padding: 10px;
+    margin-bottom: 3px;
+    width: 300px;
+}
+
+.menu h3+ul li {
+    width: 280px;
+}
+
+#list1:checked~ul .list1,
+#list2:checked~ul .list2,
+#list3:checked~ul .list3 {
+    background-color: rgba(240, 128, 128, .3);
+}
+
+.menu ul ul {
+    height: 0;
+    overflow: hidden;
+}
+
+#list1:checked~ul .list1 ul,
+#list2:checked~ul .list2 ul,
+#list3:checked~ul .list3 ul {
+    height: 130px;
+}
+
+/* Tabs */
+.header li {
+    line-height: 50px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+#tab1:checked~.header .tab1,
+#tab2:checked~.header .tab2,
+#tab3:checked~.header .tab3 {
+    background-color: rgba(240, 128, 128, .7);
+}
+
+.article li {
+    width: 800px;
+    height: 300px;
+    position: absolute;
+    top: 55px;
+    padding: 30px 20px;
+    cursor: auto;
+    margin-bottom: 50px;
+    opacity: 0;
+}
+
+.article li:hover {
+    background-color: initial;
+}
+
+#tab1:checked~.article .tab1,
+#tab2:checked~.article .tab2,
+#tab3:checked~.article .tab3 {
+    opacity: 1;
+}

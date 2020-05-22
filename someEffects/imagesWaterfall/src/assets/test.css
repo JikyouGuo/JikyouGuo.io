@@ -1,0 +1,44 @@
+body,
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  display: inline-block;
+}
+img {
+  vertical-align: bottom;
+}
+span {
+  display: block;
+}
+.waterfall.container {
+  width: 92vw;
+  margin: 0 auto;
+  font-size: 16px;
+}
+.waterfall.container .waterfall.list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+.waterfall.container .waterfall.list .waterfall.column {
+  width: 25%;
+  margin: 0 5px;
+}
+.waterfall.container .waterfall.list .waterfall.column .waterfall.item {
+  margin: 10px 0;
+}
+.waterfall.container .waterfall.list .waterfall.column .waterfall.item a img {
+  width: 100%;
+}
+.waterfall.container .waterfall.list .waterfall.column .waterfall.item p {
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  margin: 5px 0;
+}

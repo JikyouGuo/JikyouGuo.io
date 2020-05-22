@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+root,
+html {
+    height: 100%;
+    body {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: space-around;
+        .game {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            border: 2px solid black;
+            overflow: hidden;
+            .sky {
+                height: 100%;
+                width: 200%;
+                background-image: url(./img/sky.png);
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .land {
+                height: 112px;
+                width: 200%;
+                background-image: url(./img/land.png);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+            .bird {
+                width: 33px;
+                height: 26px;
+                background-image: url(./img/bird.png);
+                position: absolute;
+                left: 150px;
+                top: 150px;
+            }
+            .bird.swing0 {
+                background-position: -60px -10px;
+            }
+            .bird.swing1 {
+                background-position: -8px -10px;
+            }
+            .bird.swing2 {
+                background-position: -113px -10px;
+            }
+            .pipe {
+                width: 52px;
+                height: 420px;
+                position: absolute;
+            }
+            .pipe.up {
+                left: 800px;
+                top: 0;
+                background-image: url(./img/pipeUp.png);
+                background-position: bottom;
+            }
+            .pipe.down {
+                left: 800px;
+                bottom: 112px;
+                background-image: url(./img/pipeDown.png);
+            }
+        }
+        .info {
+            width: 800px;
+            align-self: flex-end;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+root,
+html {
+  height: 100%;
+}
+root body,
+html body {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+root body .game,
+html body .game {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  border: 2px solid black;
+  overflow: hidden;
+}
+root body .game .sky,
+html body .game .sky {
+  height: 100%;
+  width: 200%;
+  background-image: url(img/sky.png);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+root body .game .land,
+html body .game .land {
+  height: 112px;
+  width: 200%;
+  background-image: url(img/land.png);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+root body .game .bird,
+html body .game .bird {
+  width: 33px;
+  height: 26px;
+  background-image: url(img/bird.png);
+  position: absolute;
+  left: 150px;
+  top: 150px;
+}
+root body .game .bird.swing0,
+html body .game .bird.swing0 {
+  background-position: -60px -10px;
+}
+root body .game .bird.swing1,
+html body .game .bird.swing1 {
+  background-position: -8px -10px;
+}
+root body .game .bird.swing2,
+html body .game .bird.swing2 {
+  background-position: -113px -10px;
+}
+root body .game .pipe,
+html body .game .pipe {
+  width: 52px;
+  height: 420px;
+  position: absolute;
+}
+root body .game .pipe.up,
+html body .game .pipe.up {
+  left: 800px;
+  top: 0;
+  background-image: url(img/pipeUp.png);
+  background-position: bottom;
+}
+root body .game .pipe.down,
+html body .game .pipe.down {
+  left: 800px;
+  bottom: 112px;
+  background-image: url(img/pipeDown.png);
+}
+root body .info,
+html body .info {
+  width: 800px;
+  align-self: flex-end;
+  text-align: center;
+}
