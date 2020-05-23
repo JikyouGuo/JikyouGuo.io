@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Tetris</title><style>:root,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        flex-direction: column;
+      }
+      .d-all {
+        width: 100%;
+        height: 100%;
+      }
+      .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .flex-column {
+        display: flex;
+        flex-direction: column;
+      }
+      .radius-5 {
+        border-radius: 5px;
+      }
+
+      #root {
+        position: relative;
+        background-color: #333;
+      }
+      #modal {
+        position: relative;
+        display: none;
+        background-color: #eee8;
+      }
+      #alert {
+        padding: 1rem;
+        background-color: red;
+        color: #eee;
+        font-weight: 700;
+        border: 2px solid #eee;
+        border-radius: 5px;
+      }
+
+      #info {
+        padding: 0 2rem;
+        justify-content: space-between;
+        background-color: #1111;
+      }
+      #next {
+        margin-top: 2rem;
+        position: relative;
+      }
+      #score {
+        color: orange;
+        font-weight: 700;
+        font-size: 3rem;
+      }
+      #desc {
+        margin-bottom: 2rem;
+        justify-self: flex-end;
+      }
+      h1 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }</style></head><body class="flex-center"><h1>Tetris</h1><div id="game" class="flex-center"><div id="root" class="radius-5"><div id="modal" class="flex-center d-all"><div id="alert">GAME OVER</div></div></div><div id="info" class="radius-5 flex-column"><div id="next"></div><div id="score">0</div><div id="desc"><p><strong>Enter</strong>: 开始|暂停|继续</p><p><strong>方向键|WASD</strong>: 移动、旋转</p><p><strong>Space</strong>: 下落到底</p></div></div></div><script src="script/bundle.js"></script></body></html>
