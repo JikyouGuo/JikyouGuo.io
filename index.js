@@ -39,47 +39,32 @@ class MyCollection {
 }
 new MyCollection([
   {
-    type: '后台管理系统循环迭代项目',
-    name: '原生JS',
-    url: './iteraive-ISMS/1.ISMS.originalJS',
+    type: 'demo',
+    name: '俄罗斯方块',
+    url: './Tetris',
   },
   {
-    type: '后台管理系统循环迭代项目',
-    name: 'jQuery',
-    url: './iteraive-ISMS/2.ISMS.jQuery',
+    type: 'demo',
+    name: '井字棋',
+    url: './TicTacToe',
   },
   {
-    type: '后台管理系统循环迭代项目',
-    name: '+CSS3HTML5',
-    url: './iteraive-ISMS/3.ISMS.Css3Html5',
-  },
-  {
-    type: '后台管理系统循环迭代项目',
-    name: 'Bootstrap',
-    url: './iteraive-ISMS/4.ISMS.Bootstrap',
-  },
-  {
-    type: '后台管理系统循环迭代项目',
-    name: 'Vue',
-    url: './iteraive-ISMS/5.ISMS.vue/dist',
-  },
-  {
-    type: '其他demo',
+    type: 'demo',
     name: '移动端音乐播放器',
     url: './c3h5-music/dist/html',
   },
   {
-    type: '其他demo',
+    type: 'demo',
     name: 'vue 电影列表页',
     url: './vue-movies',
   },
   {
-    type: '其他demo',
+    type: 'demo',
     name: 'flayyp bird - 面向对象',
     url: './effects/es6-flappybird',
   },
   {
-    type: '效果',
+    type: 'demo',
     name: '九格滑块拼图',
     url: './effects/拼图游戏',
   },
@@ -127,5 +112,30 @@ new MyCollection([
   //   type: '效果',
   //   name: '美团静态页面',
   //   url: './effects/vue-meituan-app/'
-  // }
+  // },
+  {
+    type: '后台管理系统循环迭代项目',
+    name: '原生JS',
+    url: './iteraive-ISMS/1.ISMS.originalJS',
+  },
+  {
+    type: '后台管理系统循环迭代项目',
+    name: 'jQuery',
+    url: './iteraive-ISMS/2.ISMS.jQuery',
+  },
+  {
+    type: '后台管理系统循环迭代项目',
+    name: '+CSS3HTML5',
+    url: './iteraive-ISMS/3.ISMS.Css3Html5',
+  },
+  {
+    type: '后台管理系统循环迭代项目',
+    name: 'Bootstrap',
+    url: './iteraive-ISMS/4.ISMS.Bootstrap',
+  },
+  {
+    type: '后台管理系统循环迭代项目',
+    name: 'Vue',
+    url: './iteraive-ISMS/5.ISMS.vue/dist',
+  },
 ]).render();
